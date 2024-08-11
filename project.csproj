@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <PackageId>DeutschlandAPI.SDK</PackageId>
+    <PackageVersion>0.1.0</PackageVersion>
+    <Authors>chriskapp</Authors>
+    <Company>Apioo</Company>
+    <Description>Client SDK to access the Deutschland API</Description>
+    <Copyright>Christoph Kappestein</Copyright>
+    <RepositoryUrl>https://github.com/apioo/deutschland-api-sdk-csharp</RepositoryUrl>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>deutschland-api-sdk</AssemblyName>
+    <PackageProjectUrl>https://deutschland-api.dev/</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/apioo/deutschland-api-sdk-csharp/blob/main/LICENSE</PackageLicenseUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>logo.png</PackageIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Sdkgen.Client" Version="0.1.9" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\logo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+      <Link>logo.png</Link>
+    </None>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\"/>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,9 @@
+{
+  "type": "client-csharp",
+  "require": {
+    "deutschland-api/sdk": {
+      "target": "./src/DeutschlandAPI.SDK",
+      "namespace": "DeutschlandAPI.SDK"
+    }
+  }
+}
