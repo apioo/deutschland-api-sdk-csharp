@@ -43,9 +43,9 @@ public class AutobahnChargingStationTag : TagAbstract {
 
         throw (int) response.StatusCode switch
         {
-            400 => new MessageException(this.Parser.Parse<Message>(response.Content)),
-            404 => new MessageException(this.Parser.Parse<Message>(response.Content)),
-            500 => new MessageException(this.Parser.Parse<Message>(response.Content)),
+            400 => new ResponseException(this.Parser.Parse<Response>(response.Content)),
+            404 => new ResponseException(this.Parser.Parse<Response>(response.Content)),
+            500 => new ResponseException(this.Parser.Parse<Response>(response.Content)),
             _ => throw new UnknownStatusCodeException("The server returned an unknown status code"),
         };
     }
