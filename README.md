@@ -14,7 +14,7 @@ Client client = Client.BuildAnonymous()
 
 foreach (City city in client.City().GetAll())
 {
-    Console.WriteLn(city.State);
+    Console.WriteLine(city.State);
 }
 
 ```
