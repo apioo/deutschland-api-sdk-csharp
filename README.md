@@ -12,9 +12,10 @@ using DeutschlandAPI.SDK.Client;
 
 Client client = Client.BuildAnonymous()
 
-foreach (City city in client.City().GetAll())
+StateCollection collection = client.State().GetAll();
+foreach (State state in collection.Entries())
 {
-    Console.WriteLine(city.State);
+    Console.WriteLine(state.Name);
 }
 
 ```
