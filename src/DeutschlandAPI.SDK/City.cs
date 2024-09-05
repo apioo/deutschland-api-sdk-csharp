@@ -19,6 +19,8 @@ public class City
     public string? Verb { get; set; }
     [JsonPropertyName("gem")]
     public string? Gem { get; set; }
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
     [JsonPropertyName("zipCode")]
     public string? ZipCode { get; set; }
     [JsonPropertyName("area")]
