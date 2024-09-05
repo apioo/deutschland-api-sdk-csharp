@@ -17,6 +17,8 @@ public class BundesratMember
     public string? Party { get; set; }
     [JsonPropertyName("state")]
     public string? State { get; set; }
+    [JsonPropertyName("bundesratMember")]
+    public bool? BundesratMember { get; set; }
     [JsonPropertyName("member")]
     public bool? Member { get; set; }
     [JsonPropertyName("designated")]
