@@ -10,7 +10,14 @@ The following example shows how you initialize the client:
 ```csharp
 using DeutschlandAPI.SDK.Client;
 
-Client client = Client.Build()
+Client client = Client.BuildAnonymous()
 
-// @TODO use the client
+foreach (City city in client.City().GetAll())
+{
+    Console.WriteLn(city.State);
+}
+
 ```
+
+More information about the complete API at:
+https://app.typehub.cloud/d/deutschland-api/sdk
