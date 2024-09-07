@@ -20,6 +20,14 @@ public class Client : ClientAbstract
     {
     }
 
+    public JobTag Job()
+    {
+        return new JobTag(
+            this.HttpClient,
+            this.Parser
+        );
+    }
+
     public HospitalTag Hospital()
     {
         return new HospitalTag(
