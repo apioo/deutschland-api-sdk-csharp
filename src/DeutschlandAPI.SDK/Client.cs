@@ -20,25 +20,33 @@ public class Client : ClientAbstract
     {
     }
 
-    public JobTag Job()
+    public AuthorizationTag Authorization()
     {
-        return new JobTag(
+        return new AuthorizationTag(
             this.HttpClient,
             this.Parser
         );
     }
 
-    public HospitalTag Hospital()
+    public AutobahnTag Autobahn()
     {
-        return new HospitalTag(
+        return new AutobahnTag(
             this.HttpClient,
             this.Parser
         );
     }
 
-    public WarningTag Warning()
+    public BundesratTag Bundesrat()
     {
-        return new WarningTag(
+        return new BundesratTag(
+            this.HttpClient,
+            this.Parser
+        );
+    }
+
+    public BundestagTag Bundestag()
+    {
+        return new BundestagTag(
             this.HttpClient,
             this.Parser
         );
@@ -60,41 +68,17 @@ public class Client : ClientAbstract
         );
     }
 
-    public StateTag State()
+    public HospitalTag Hospital()
     {
-        return new StateTag(
+        return new HospitalTag(
             this.HttpClient,
             this.Parser
         );
     }
 
-    public BundestagTag Bundestag()
+    public JobTag Job()
     {
-        return new BundestagTag(
-            this.HttpClient,
-            this.Parser
-        );
-    }
-
-    public BundesratTag Bundesrat()
-    {
-        return new BundesratTag(
-            this.HttpClient,
-            this.Parser
-        );
-    }
-
-    public AutobahnTag Autobahn()
-    {
-        return new AutobahnTag(
-            this.HttpClient,
-            this.Parser
-        );
-    }
-
-    public AuthorizationTag Authorization()
-    {
-        return new AuthorizationTag(
+        return new JobTag(
             this.HttpClient,
             this.Parser
         );
@@ -108,15 +92,31 @@ public class Client : ClientAbstract
         );
     }
 
+    public StateTag State()
+    {
+        return new StateTag(
+            this.HttpClient,
+            this.Parser
+        );
+    }
+
+    public WarningTag Warning()
+    {
+        return new WarningTag(
+            this.HttpClient,
+            this.Parser
+        );
+    }
+
 
 
     public static Client Build(string clientId, string clientSecret, ITokenStore tokenStore, List<string> scopes)
     {
-        return new Client("https://api.deutschland-api.dev/", new OAuth2(clientId, clientSecret, "https://api.deutschland-api.dev/authorization/token", "", tokenStore, scopes));
+        return new Client("http://localhost", new OAuth2(clientId, clientSecret, "http://localhost/authorization/token", "", tokenStore, scopes));
     }
 
     public static Client BuildAnonymous()
     {
-        return new Client("https://api.deutschland-api.dev/", new Anonymous());
+        return new Client("http://localhost", new Anonymous());
     }
 }

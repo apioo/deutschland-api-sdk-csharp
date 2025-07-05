@@ -4,9 +4,13 @@
  */
 
 using System.Text.Json.Serialization;
+
 namespace DeutschlandAPI.SDK;
+
 public class AutobahnClosureCollection
 {
     [JsonPropertyName("entries")]
-    public List<AutobahnClosure>? Entries { get; set; }
+    public System.Collections.Generic.List<AutobahnClosure>? Entries { get; set; }
+
 }
+

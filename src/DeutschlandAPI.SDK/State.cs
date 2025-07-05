@@ -4,13 +4,19 @@
  */
 
 using System.Text.Json.Serialization;
+
 namespace DeutschlandAPI.SDK;
+
 public class State
 {
     [JsonPropertyName("id")]
     public string? Id { get; set; }
+
     [JsonPropertyName("name")]
     public string? Name { get; set; }
+
     [JsonPropertyName("area")]
     public int? Area { get; set; }
+
 }
+

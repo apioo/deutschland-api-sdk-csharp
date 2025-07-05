@@ -4,15 +4,22 @@
  */
 
 using System.Text.Json.Serialization;
+
 namespace DeutschlandAPI.SDK;
+
 public class JobCoordinate
 {
     [JsonPropertyName("id")]
     public string? Id { get; set; }
+
     [JsonPropertyName("title")]
     public string? Title { get; set; }
+
     [JsonPropertyName("address")]
     public string? Address { get; set; }
+
     [JsonPropertyName("link")]
     public string? Link { get; set; }
+
 }
+

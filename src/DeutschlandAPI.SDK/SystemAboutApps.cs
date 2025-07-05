@@ -5,7 +5,10 @@
 
 using System.Text.Json.Serialization;
 using System.Collections.Generic;
+
 namespace DeutschlandAPI.SDK;
+
 public class SystemAboutApps : Dictionary<string, string>
 {
 }
+

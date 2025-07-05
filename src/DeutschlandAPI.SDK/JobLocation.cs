@@ -4,17 +4,25 @@
  */
 
 using System.Text.Json.Serialization;
+
 namespace DeutschlandAPI.SDK;
+
 public class JobLocation
 {
     [JsonPropertyName("zip")]
     public string? Zip { get; set; }
+
     [JsonPropertyName("place")]
     public string? Place { get; set; }
+
     [JsonPropertyName("state")]
     public string? State { get; set; }
+
     [JsonPropertyName("country")]
     public string? Country { get; set; }
+
     [JsonPropertyName("coordinate")]
     public JobCoordinate? Coordinate { get; set; }
+
 }
+

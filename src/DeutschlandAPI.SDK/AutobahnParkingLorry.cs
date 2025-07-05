@@ -4,19 +4,28 @@
  */
 
 using System.Text.Json.Serialization;
+
 namespace DeutschlandAPI.SDK;
+
 public class AutobahnParkingLorry
 {
     [JsonPropertyName("id")]
     public string? Id { get; set; }
+
     [JsonPropertyName("title")]
     public string? Title { get; set; }
+
     [JsonPropertyName("subtitle")]
     public string? Subtitle { get; set; }
+
     [JsonPropertyName("description")]
-    public List<string>? Description { get; set; }
+    public System.Collections.Generic.List<string>? Description { get; set; }
+
     [JsonPropertyName("coordinate")]
     public AutobahnCoordinate? Coordinate { get; set; }
+
     [JsonPropertyName("features")]
-    public List<string>? Features { get; set; }
+    public System.Collections.Generic.List<string>? Features { get; set; }
+
 }
+

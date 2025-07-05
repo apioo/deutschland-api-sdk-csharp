@@ -4,7 +4,10 @@
  */
 
 using System.Text.Json.Serialization;
+
 namespace DeutschlandAPI.SDK;
+
 public class HospitalCollection : Collection<Hospital>
 {
 }
+

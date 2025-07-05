@@ -4,9 +4,13 @@
  */
 
 using System.Text.Json.Serialization;
+
 namespace DeutschlandAPI.SDK;
+
 public class BundesratMemberCollection
 {
     [JsonPropertyName("entries")]
-    public List<BundesratMember>? Entries { get; set; }
+    public System.Collections.Generic.List<BundesratMember>? Entries { get; set; }
+
 }
+

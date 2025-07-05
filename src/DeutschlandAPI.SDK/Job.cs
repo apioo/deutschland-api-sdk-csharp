@@ -4,21 +4,31 @@
  */
 
 using System.Text.Json.Serialization;
+
 namespace DeutschlandAPI.SDK;
+
 public class Job
 {
     [JsonPropertyName("job")]
-    public string? Job { get; set; }
+    public string? Job_ { get; set; }
+
     [JsonPropertyName("title")]
     public string? Title { get; set; }
+
     [JsonPropertyName("number")]
     public string? Number { get; set; }
+
     [JsonPropertyName("location")]
     public JobLocation? Location { get; set; }
+
     [JsonPropertyName("employer")]
     public string? Employer { get; set; }
+
     [JsonPropertyName("publishDate")]
-    public DateTime? PublishDate { get; set; }
+    public System.DateTime? PublishDate { get; set; }
+
     [JsonPropertyName("entranceDate")]
-    public DateTime? EntranceDate { get; set; }
+    public System.DateTime? EntranceDate { get; set; }
+
 }
+

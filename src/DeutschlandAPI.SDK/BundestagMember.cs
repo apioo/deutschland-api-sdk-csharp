@@ -4,29 +4,43 @@
  */
 
 using System.Text.Json.Serialization;
+
 namespace DeutschlandAPI.SDK;
+
 public class BundestagMember
 {
     [JsonPropertyName("id")]
     public string? Id { get; set; }
+
     [JsonPropertyName("name")]
     public string? Name { get; set; }
+
     [JsonPropertyName("party")]
     public string? Party { get; set; }
+
     [JsonPropertyName("bioUrl")]
     public string? BioUrl { get; set; }
+
     [JsonPropertyName("state")]
     public string? State { get; set; }
+
     [JsonPropertyName("constituency")]
     public BundestagConstituency? Constituency { get; set; }
+
     [JsonPropertyName("elected")]
     public string? Elected { get; set; }
+
     [JsonPropertyName("photo")]
     public string? Photo { get; set; }
+
     [JsonPropertyName("photoLarge")]
     public string? PhotoLarge { get; set; }
+
     [JsonPropertyName("photoLastChanged")]
-    public DateTime? PhotoLastChanged { get; set; }
+    public System.DateTime? PhotoLastChanged { get; set; }
+
     [JsonPropertyName("lastChanged")]
-    public DateTime? LastChanged { get; set; }
+    public System.DateTime? LastChanged { get; set; }
+
 }
+

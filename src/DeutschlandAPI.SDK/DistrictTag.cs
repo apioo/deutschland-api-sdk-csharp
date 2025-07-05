@@ -34,22 +34,40 @@ public class DistrictTag : TagAbstract {
         RestRequest request = new(this.Parser.Url("/district/:district_id", pathParams), Method.Get);
         this.Parser.Query(request, queryParams, queryStructNames);
 
+
         RestResponse response = await this.HttpClient.ExecuteAsync(request);
 
         if (response.IsSuccessful)
         {
-            return this.Parser.Parse<District>(response.Content);
+            var data = this.Parser.Parse<District>(response.Content);
+
+            return data;
         }
 
-        throw (int) response.StatusCode switch
+        var statusCode = (int) response.StatusCode;
+        if (statusCode == 400)
         {
-            400 => new ResponseException(this.Parser.Parse<Response>(response.Content)),
-            404 => new ResponseException(this.Parser.Parse<Response>(response.Content)),
-            500 => new ResponseException(this.Parser.Parse<Response>(response.Content)),
-            _ => throw new UnknownStatusCodeException("The server returned an unknown status code"),
-        };
-    }
+            var data = this.Parser.Parse<Response>(response.Content);
 
+            throw new ResponseException(data);
+        }
+
+        if (statusCode == 404)
+        {
+            var data = this.Parser.Parse<Response>(response.Content);
+
+            throw new ResponseException(data);
+        }
+
+        if (statusCode == 500)
+        {
+            var data = this.Parser.Parse<Response>(response.Content);
+
+            throw new ResponseException(data);
+        }
+
+        throw new UnknownStatusCodeException("The server returned an unknown status code: " + statusCode);
+    }
     /**
      * Returns all available districts
      */
@@ -67,20 +85,39 @@ public class DistrictTag : TagAbstract {
         RestRequest request = new(this.Parser.Url("/district", pathParams), Method.Get);
         this.Parser.Query(request, queryParams, queryStructNames);
 
+
         RestResponse response = await this.HttpClient.ExecuteAsync(request);
 
         if (response.IsSuccessful)
         {
-            return this.Parser.Parse<DistrictCollection>(response.Content);
+            var data = this.Parser.Parse<DistrictCollection>(response.Content);
+
+            return data;
         }
 
-        throw (int) response.StatusCode switch
+        var statusCode = (int) response.StatusCode;
+        if (statusCode == 400)
         {
-            400 => new ResponseException(this.Parser.Parse<Response>(response.Content)),
-            404 => new ResponseException(this.Parser.Parse<Response>(response.Content)),
-            500 => new ResponseException(this.Parser.Parse<Response>(response.Content)),
-            _ => throw new UnknownStatusCodeException("The server returned an unknown status code"),
-        };
+            var data = this.Parser.Parse<Response>(response.Content);
+
+            throw new ResponseException(data);
+        }
+
+        if (statusCode == 404)
+        {
+            var data = this.Parser.Parse<Response>(response.Content);
+
+            throw new ResponseException(data);
+        }
+
+        if (statusCode == 500)
+        {
+            var data = this.Parser.Parse<Response>(response.Content);
+
+            throw new ResponseException(data);
+        }
+
+        throw new UnknownStatusCodeException("The server returned an unknown status code: " + statusCode);
     }
 
 

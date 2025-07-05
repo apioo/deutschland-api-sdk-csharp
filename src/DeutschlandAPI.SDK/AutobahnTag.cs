@@ -18,17 +18,9 @@ public class AutobahnTag : TagAbstract {
     {
     }
 
-    public AutobahnWarningTag Warning()
+    public AutobahnChargingStationTag ChargingStation()
     {
-        return new AutobahnWarningTag(
-            this.HttpClient,
-            this.Parser
-        );
-    }
-
-    public AutobahnParkingLorryTag ParkingLorry()
-    {
-        return new AutobahnParkingLorryTag(
+        return new AutobahnChargingStationTag(
             this.HttpClient,
             this.Parser
         );
@@ -42,9 +34,17 @@ public class AutobahnTag : TagAbstract {
         );
     }
 
-    public AutobahnChargingStationTag ChargingStation()
+    public AutobahnParkingLorryTag ParkingLorry()
     {
-        return new AutobahnChargingStationTag(
+        return new AutobahnParkingLorryTag(
+            this.HttpClient,
+            this.Parser
+        );
+    }
+
+    public AutobahnWarningTag Warning()
+    {
+        return new AutobahnWarningTag(
             this.HttpClient,
             this.Parser
         );
@@ -65,20 +65,39 @@ public class AutobahnTag : TagAbstract {
         RestRequest request = new(this.Parser.Url("/autobahn", pathParams), Method.Get);
         this.Parser.Query(request, queryParams, queryStructNames);
 
+
         RestResponse response = await this.HttpClient.ExecuteAsync(request);
 
         if (response.IsSuccessful)
         {
-            return this.Parser.Parse<AutobahnCollection>(response.Content);
+            var data = this.Parser.Parse<AutobahnCollection>(response.Content);
+
+            return data;
         }
 
-        throw (int) response.StatusCode switch
+        var statusCode = (int) response.StatusCode;
+        if (statusCode == 400)
         {
-            400 => new ResponseException(this.Parser.Parse<Response>(response.Content)),
-            404 => new ResponseException(this.Parser.Parse<Response>(response.Content)),
-            500 => new ResponseException(this.Parser.Parse<Response>(response.Content)),
-            _ => throw new UnknownStatusCodeException("The server returned an unknown status code"),
-        };
+            var data = this.Parser.Parse<Response>(response.Content);
+
+            throw new ResponseException(data);
+        }
+
+        if (statusCode == 404)
+        {
+            var data = this.Parser.Parse<Response>(response.Content);
+
+            throw new ResponseException(data);
+        }
+
+        if (statusCode == 500)
+        {
+            var data = this.Parser.Parse<Response>(response.Content);
+
+            throw new ResponseException(data);
+        }
+
+        throw new UnknownStatusCodeException("The server returned an unknown status code: " + statusCode);
     }
 
 

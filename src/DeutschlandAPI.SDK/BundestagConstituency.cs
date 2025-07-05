@@ -4,11 +4,16 @@
  */
 
 using System.Text.Json.Serialization;
+
 namespace DeutschlandAPI.SDK;
+
 public class BundestagConstituency
 {
     [JsonPropertyName("number")]
     public string? Number { get; set; }
+
     [JsonPropertyName("name")]
     public string? Name { get; set; }
+
 }
+

@@ -4,15 +4,22 @@
  */
 
 using System.Text.Json.Serialization;
+
 namespace DeutschlandAPI.SDK;
+
 public class Collection<T>
 {
     [JsonPropertyName("totalResults")]
     public int? TotalResults { get; set; }
+
     [JsonPropertyName("startIndex")]
     public int? StartIndex { get; set; }
+
     [JsonPropertyName("itemsPerPage")]
     public int? ItemsPerPage { get; set; }
+
     [JsonPropertyName("entries")]
-    public List<T>? Entries { get; set; }
+    public System.Collections.Generic.List<T>? Entries { get; set; }
+
 }
+

@@ -4,9 +4,13 @@
  */
 
 using System.Text.Json.Serialization;
+
 namespace DeutschlandAPI.SDK;
+
 public class BundestagMemberCollection
 {
     [JsonPropertyName("entries")]
-    public List<BundestagMember>? Entries { get; set; }
+    public System.Collections.Generic.List<BundestagMember>? Entries { get; set; }
+
 }
+

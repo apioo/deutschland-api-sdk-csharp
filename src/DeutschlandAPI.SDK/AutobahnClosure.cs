@@ -4,25 +4,37 @@
  */
 
 using System.Text.Json.Serialization;
+
 namespace DeutschlandAPI.SDK;
+
 public class AutobahnClosure
 {
     [JsonPropertyName("id")]
     public string? Id { get; set; }
+
     [JsonPropertyName("blocked")]
     public bool? Blocked { get; set; }
+
     [JsonPropertyName("future")]
     public bool? Future { get; set; }
+
     [JsonPropertyName("title")]
     public string? Title { get; set; }
+
     [JsonPropertyName("subtitle")]
     public string? Subtitle { get; set; }
+
     [JsonPropertyName("description")]
-    public List<string>? Description { get; set; }
+    public System.Collections.Generic.List<string>? Description { get; set; }
+
     [JsonPropertyName("startDate")]
-    public DateTime? StartDate { get; set; }
+    public System.DateTime? StartDate { get; set; }
+
     [JsonPropertyName("coordinate")]
     public AutobahnCoordinate? Coordinate { get; set; }
+
     [JsonPropertyName("lineString")]
-    public List<AutobahnCoordinate>? LineString { get; set; }
+    public System.Collections.Generic.List<AutobahnCoordinate>? LineString { get; set; }
+
 }
+

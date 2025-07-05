@@ -4,9 +4,13 @@
  */
 
 using System.Text.Json.Serialization;
+
 namespace DeutschlandAPI.SDK;
+
 public class AutobahnCollection
 {
     [JsonPropertyName("roads")]
-    public List<string>? Roads { get; set; }
+    public System.Collections.Generic.List<string>? Roads { get; set; }
+
 }
+

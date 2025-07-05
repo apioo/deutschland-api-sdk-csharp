@@ -4,9 +4,13 @@
  */
 
 using System.Text.Json.Serialization;
+
 namespace DeutschlandAPI.SDK;
+
 public class AutobahnWarningCollection
 {
     [JsonPropertyName("entries")]
-    public List<AutobahnWarning>? Entries { get; set; }
+    public System.Collections.Generic.List<AutobahnWarning>? Entries { get; set; }
+
 }
+

@@ -4,9 +4,13 @@
  */
 
 using System.Text.Json.Serialization;
+
 namespace DeutschlandAPI.SDK;
+
 public class WarningCollection
 {
     [JsonPropertyName("entries")]
-    public List<Warning>? Entries { get; set; }
+    public System.Collections.Generic.List<Warning>? Entries { get; set; }
+
 }
+

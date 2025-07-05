@@ -4,11 +4,16 @@
  */
 
 using System.Text.Json.Serialization;
+
 namespace DeutschlandAPI.SDK;
+
 public class AutobahnCoordinate
 {
     [JsonPropertyName("lat")]
     public string? Lat { get; set; }
+
     [JsonPropertyName("long")]
     public string? Long { get; set; }
+
 }
+

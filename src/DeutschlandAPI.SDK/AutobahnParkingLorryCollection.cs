@@ -4,9 +4,13 @@
  */
 
 using System.Text.Json.Serialization;
+
 namespace DeutschlandAPI.SDK;
+
 public class AutobahnParkingLorryCollection
 {
     [JsonPropertyName("entries")]
-    public List<AutobahnParkingLorry>? Entries { get; set; }
+    public System.Collections.Generic.List<AutobahnParkingLorry>? Entries { get; set; }
+
 }
+

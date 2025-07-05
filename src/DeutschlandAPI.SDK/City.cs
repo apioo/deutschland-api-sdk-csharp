@@ -4,25 +4,37 @@
  */
 
 using System.Text.Json.Serialization;
+
 namespace DeutschlandAPI.SDK;
+
 public class City
 {
     [JsonPropertyName("id")]
     public int? Id { get; set; }
+
     [JsonPropertyName("state")]
     public string? State { get; set; }
+
     [JsonPropertyName("rb")]
     public string? Rb { get; set; }
+
     [JsonPropertyName("district")]
     public string? District { get; set; }
+
     [JsonPropertyName("verb")]
     public string? Verb { get; set; }
+
     [JsonPropertyName("gem")]
     public string? Gem { get; set; }
+
     [JsonPropertyName("name")]
     public string? Name { get; set; }
+
     [JsonPropertyName("zipCode")]
     public string? ZipCode { get; set; }
+
     [JsonPropertyName("area")]
     public int? Area { get; set; }
+
 }
+

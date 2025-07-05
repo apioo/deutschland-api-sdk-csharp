@@ -4,33 +4,49 @@
  */
 
 using System.Text.Json.Serialization;
+
 namespace DeutschlandAPI.SDK;
+
 public class BundesratMember
 {
     [JsonPropertyName("honorificTitle")]
     public string? HonorificTitle { get; set; }
+
     [JsonPropertyName("firstName")]
     public string? FirstName { get; set; }
+
     [JsonPropertyName("name")]
     public string? Name { get; set; }
+
     [JsonPropertyName("party")]
     public string? Party { get; set; }
+
     [JsonPropertyName("state")]
     public string? State { get; set; }
+
     [JsonPropertyName("member")]
     public bool? Member { get; set; }
+
     [JsonPropertyName("designated")]
     public bool? Designated { get; set; }
+
     [JsonPropertyName("url")]
     public string? Url { get; set; }
+
     [JsonPropertyName("imagePath")]
     public string? ImagePath { get; set; }
+
     [JsonPropertyName("imageDate")]
-    public DateTime? ImageDate { get; set; }
+    public System.DateTime? ImageDate { get; set; }
+
     [JsonPropertyName("detail")]
     public string? Detail { get; set; }
+
     [JsonPropertyName("bio")]
     public string? Bio { get; set; }
+
     [JsonPropertyName("address")]
     public string? Address { get; set; }
+
 }
+

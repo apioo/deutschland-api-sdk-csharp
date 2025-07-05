@@ -4,9 +4,13 @@
  */
 
 using System.Text.Json.Serialization;
+
 namespace DeutschlandAPI.SDK;
+
 public class AutobahnChargingStationCollection
 {
     [JsonPropertyName("entries")]
-    public List<AutobahnChargingStation>? Entries { get; set; }
+    public System.Collections.Generic.List<AutobahnChargingStation>? Entries { get; set; }
+
 }
+
