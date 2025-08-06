@@ -112,7 +112,7 @@ public class Client : ClientAbstract
 
     public static Client Build(string clientId, string clientSecret, ITokenStore tokenStore, List<string> scopes)
     {
-        return new Client("http://localhost", new OAuth2(clientId, clientSecret, "http://localhost/authorization/token", "", tokenStore, scopes));
+        return new Client("http://localhost", new OAuth2(clientId, clientSecret, "http://localhost/authorization/token", "http://localhost/authorization/authorize", tokenStore, scopes));
     }
 
     public static Client BuildAnonymous()

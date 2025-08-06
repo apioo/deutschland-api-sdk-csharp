@@ -19,6 +19,9 @@ public class MetaTag : TagAbstract {
     }
 
 
+    /**
+     * Returns meta information and links about the current installed Fusio version
+     */
     public async Task<SystemAbout> GetAbout()
     {
         Dictionary<string, object> pathParams = new();

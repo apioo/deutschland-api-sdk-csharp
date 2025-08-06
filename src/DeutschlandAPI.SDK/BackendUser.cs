@@ -7,6 +7,9 @@ using System.Text.Json.Serialization;
 
 namespace DeutschlandAPI.SDK;
 
+/// <summary>
+/// This object represents a user
+/// </summary>
 public class BackendUser
 {
     [JsonPropertyName("id")]
