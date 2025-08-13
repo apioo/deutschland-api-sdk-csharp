@@ -112,11 +112,11 @@ public class Client : ClientAbstract
 
     public static Client Build(string clientId, string clientSecret, ITokenStore tokenStore, List<string> scopes)
     {
-        return new Client("http://localhost", new OAuth2(clientId, clientSecret, "http://localhost/authorization/token", "http://localhost/authorization/authorize", tokenStore, scopes));
+        return new Client("https://api.deutschland-api.dev", new OAuth2(clientId, clientSecret, "https://api.deutschland-api.dev/authorization/token", "https://api.deutschland-api.dev/authorization/authorize", tokenStore, scopes));
     }
 
     public static Client BuildAnonymous()
     {
-        return new Client("http://localhost", new Anonymous());
+        return new Client("https://api.deutschland-api.dev", new Anonymous());
     }
 }
