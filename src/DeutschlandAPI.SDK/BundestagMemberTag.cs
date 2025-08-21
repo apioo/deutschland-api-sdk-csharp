@@ -20,7 +20,7 @@ public class BundestagMemberTag : TagAbstract {
 
 
     /**
-     * Returns specific member of the Bundestag
+     * Returns a specific member of the Bundestag
      */
     public async Task<BundestagMember> Get(string memberId)
     {
