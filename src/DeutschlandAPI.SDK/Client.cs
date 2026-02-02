@@ -92,6 +92,14 @@ public class Client : ClientAbstract
         );
     }
 
+    public NewsTag News()
+    {
+        return new NewsTag(
+            this.HttpClient,
+            this.Parser
+        );
+    }
+
     public StateTag State()
     {
         return new StateTag(
