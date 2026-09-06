@@ -36,6 +36,14 @@ public class Client : ClientAbstract
         );
     }
 
+    public BudgetTag Budget()
+    {
+        return new BudgetTag(
+            this.HttpClient,
+            this.Parser
+        );
+    }
+
     public BundesratTag Bundesrat()
     {
         return new BundesratTag(
@@ -87,6 +95,14 @@ public class Client : ClientAbstract
     public MetaTag Meta()
     {
         return new MetaTag(
+            this.HttpClient,
+            this.Parser
+        );
+    }
+
+    public NewsTag News()
+    {
+        return new NewsTag(
             this.HttpClient,
             this.Parser
         );
