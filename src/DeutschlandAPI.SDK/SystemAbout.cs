@@ -9,6 +9,9 @@ namespace DeutschlandAPI.SDK;
 
 public class SystemAbout
 {
+    [JsonPropertyName("kind")]
+    public string? Kind { get; set; }
+
     [JsonPropertyName("apiVersion")]
     public string? ApiVersion { get; set; }
 
